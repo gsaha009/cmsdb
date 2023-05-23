@@ -23,6 +23,61 @@ cpn.add_dataset(
     n_files=436,
     n_events=355332000,
 )
+#     info=dict(
+#         nominal=DatasetInfo(
+#             keys=[
+#         "/TTToSemiLeptonic_TuneCP5_13TeV-powheg-pythia8/RunIISummer20UL17NanoAODv11-106X_mc2017_realistic_v9-v1/NANOAODSIM",  # noqa
+#     ],
+#     n_files=436,
+#     n_events=355332000,
+# ),
+#         tune_up=DatasetInfo(
+#             keys=[
+#                 "/TTToSemiLeptonic_TuneCP5up_13TeV-powheg-pythia8/RunIISummer20UL17NanoAODv11-106X_mc2017_realistic_v9-v1/NANOAODSIM",  # noqa
+#             ],
+#             n_files=142,
+#             n_events=137062000,
+#         ),
+#         tune_down=DatasetInfo(
+#             keys=[
+#                 "/TTToSemiLeptonic_TuneCP5down_13TeV-powheg-pythia8/RunIISummer20UL17NanoAODv11-106X_mc2017_realistic_v9-v1/NANOAODSIM",  # noqa
+#             ],
+#             n_files=122,
+#             n_events=134394000,
+#         ),
+#         hdamp_up=DatasetInfo(
+#             keys=[
+#                 "/TTToSemiLeptonic_hdampUP_TuneCP5_13TeV-powheg-pythia8/RunIISummer20UL17NanoAODv11-106X_mc2017_realistic_v9-v1/NANOAODSIM",  # noqa
+#             ],
+#             n_files=119,
+#             n_events=132184000,
+#         ),
+#         hdamp_down=DatasetInfo(
+#             keys=[
+#                 "/TTToSemiLeptonic_hdampDOWN_TuneCP5_13TeV-powheg-pythia8/RunIISummer20UL17NanoAODv11-106X_mc2017_realistic_v9-v1/NANOAODSIM",  # noqa
+#             ],
+#             n_files=119,
+#             n_events=133515999,
+#         ),
+#         mtop_up=DatasetInfo(
+#             keys=[
+#                 "/TTToSemiLeptonic_mtop173p5_TuneCP5_13TeV-powheg-pythia8/RunIISummer20UL17NanoAODv11-106X_mc2017_realistic_v9-v1/NANOAODSIM",  # noqa
+#             ],
+#             n_files=142,
+#             n_events=137904000,
+#         ),
+#         mtop_down=DatasetInfo(
+#             keys=[
+#                 "/TTToSemiLeptonic_mtop171p5_TuneCP5_13TeV-powheg-pythia8/RunIISummer20UL17NanoAODv11-106X_mc2017_realistic_v9-v1/NANOAODSIM",  # noqa
+#             ],
+#             n_files=111,
+#             n_events=132484000,
+#         ),
+#     ),
+# )
+
+
+
 
 cpn.add_dataset(
     name="tt_dl_powheg",
@@ -35,6 +90,60 @@ cpn.add_dataset(
     n_events=106724000,
 )
 
+#     info=dict(
+#         nominal=DatasetInfo(
+#     keys=[
+#         "/TTTo2L2Nu_TuneCP5_13TeV-powheg-pythia8/RunIISummer20UL17NanoAODv11-106X_mc2017_realistic_v9-v1/NANOAODSIM",  # noqa
+#     ],
+#     n_files=123,
+#     n_events=106724000,
+# ),
+#         tune_up=DatasetInfo(
+#             keys=[
+#                 "/TTTo2L2Nu_TuneCP5up_13TeV-powheg-pythia8/RunIISummer20UL17NanoAODv11-106X_mc2017_realistic_v9-v1/NANOAODSIM",  # noqa
+#             ],
+#             n_files=56,
+#             n_events=42388000,
+#         ),
+#         tune_down=DatasetInfo(
+#             keys=[
+#                 "/TTTo2L2Nu_TuneCP5down_13TeV-powheg-pythia8/RunIISummer20UL17NanoAODv11-106X_mc2017_realistic_v9-v1/NANOAODSIM",  # noqa
+#             ],
+#             n_files=39,
+#             n_events=39285000,
+#         ),
+#         hdamp_up=DatasetInfo(
+#             keys=[
+#                 "/TTTo2L2Nu_hdampUP_TuneCP5_13TeV-powheg-pythia8/RunIISummer20UL17NanoAODv11-106X_mc2017_realistic_v9-v1/NANOAODSIM",  # noqa
+#             ],
+#             n_files=53,
+#             n_events=39884000,
+#         ),
+#         hdamp_down=DatasetInfo(
+#             keys=[
+#                 "/TTTo2L2Nu_hdampDOWN_TuneCP5_13TeV-powheg-pythia8/RunIISummer20UL17NanoAODv11-106X_mc2017_realistic_v9-v1/NANOAODSIM",  # noqa
+#             ],
+#             n_files=60,
+#             n_events=39380000,
+#         ),
+#         mtop_up=DatasetInfo(
+#             keys=[
+#                 "/TTTo2L2Nu_mtop173p5_TuneCP5_13TeV-powheg-pythia8/RunIISummer20UL17NanoAODv11-106X_mc2017_realistic_v9-v1/NANOAODSIM",  # noqa
+#             ],
+#             n_files=40,
+#             n_events=42742000,
+#         ),
+#         mtop_down=DatasetInfo(
+#             keys=[
+#                 "/TTTo2L2Nu_mtop171p5_TuneCP5_13TeV-powheg-pythia8/RunIISummer20UL17NanoAODv11-106X_mc2017_realistic_v9-v1/NANOAODSIM",  # noqa
+#             ],
+#             n_files=55,
+#             n_events=40782000,
+#         ),
+#     ),
+# )
+
+
 cpn.add_dataset(
     name="tt_fh_powheg",
     id=14222447,
@@ -45,6 +154,60 @@ cpn.add_dataset(
     n_files=296,
     n_events=235719999,
 )
+
+#     info=dict(
+#         nominal=DatasetInfo(
+# keys=[
+#     "/TTToHadronic_TuneCP5_13TeV-powheg-pythia8/RunIISummer20UL17NanoAODv11-106X_mc2017_realistic_v9-v2/NANOAODSIM",  # noqa
+# ],
+# n_files=296,
+# n_events=235719999,
+# ),
+#         tune_up=DatasetInfo(
+#             keys=[
+#                 "",  # noqa
+#             ],
+#             n_files=,
+#             n_events=,
+#         ),
+#         tune_down=DatasetInfo(
+#             keys=[
+#                 "",  # noqa
+#             ],
+#             n_files=,
+#             n_events=39285000,
+#         ),
+#         hdamp_up=DatasetInfo(
+#             keys=[
+#                 "",  # noqa
+#             ],
+#             n_files=,
+#             n_events=,
+#         ),
+#         hdamp_down=DatasetInfo(
+#             keys=[
+#                 "",  # noqa
+#             ],
+#             n_files=,
+#             n_events=,
+#         ),
+#         mtop_up=DatasetInfo(
+#             keys=[
+#                 "",  # noqa
+#             ],
+#             n_files=,
+#             n_events=,
+#         ),
+#         mtop_down=DatasetInfo(
+#             keys=[
+#                 "",  # noqa
+#             ],
+#             n_files=,
+#             n_events=,
+#         ),
+#     ),
+# )
+
 
 
 #
@@ -62,6 +225,31 @@ cpn.add_dataset(
     n_events=14196000,
 )
 
+#     info=dict(
+#         nominal=DatasetInfo(
+    # keys=[
+    #     "/TTZToLLNuNu_M-10_TuneCP5_13TeV-amcatnlo-pythia8/RunIISummer20UL17NanoAODv11-106X_mc2017_realistic_v9-v1/NANOAODSIM",  # noqa
+    # ],
+    # n_files=21,
+    # n_events=14196000,
+# ),
+#         tune_up=DatasetInfo(
+#             keys=[
+#                 "",  # noqa
+#             ],
+#             n_files=,
+#             n_events=,
+#         ),
+#         tune_down=DatasetInfo(
+#             keys=[
+#                 "",  # noqa
+#             ],
+#             n_files=,
+#             n_events=,
+#         ),
+#     ),
+# )
+
 
 cpn.add_dataset(
     name="ttw_nlu_amcatnlo",
@@ -73,6 +261,33 @@ cpn.add_dataset(
     n_files=11,
     n_events=7460671,
 )
+
+
+#     info=dict(
+#         nominal=DatasetInfo(
+    # keys=[
+    #     "/TTWJetsToLNu_TuneCP5_13TeV-amcatnloFXFX-madspin-pythia8/RunIISummer20UL17NanoAODv11-106X_mc2017_realistic_v9-v1/NANOAODSIM",  # noqa
+    # ],
+    # n_files=11,
+    # n_events=7460671,
+# ),
+#         tune_up=DatasetInfo(
+#             keys=[
+#                 "",  # noqa
+#             ],
+#             n_files=,
+#             n_events=,
+#         ),
+#         tune_down=DatasetInfo(
+#             keys=[
+#                 "",  # noqa
+#             ],
+#             n_files=,
+#             n_events=,
+#         ),
+#     ),
+# )
+
 
 cpn.add_dataset(
     name="ttw_qq_amcatnlo",
@@ -138,6 +353,46 @@ cpn.add_dataset(
     n_files=124,
     n_events=129903000,
 )
+#     info=dict(
+#         nominal=DatasetInfo(
+    # keys=[
+    #     "/ST_t-channel_top_4f_InclusiveDecays_TuneCP5_13TeV-powheg-madspin-pythia8/RunIISummer20UL17NanoAODv11-106X_mc2017_realistic_v9-v1/NANOAODSIM",  # noqa
+    # ],
+    # n_files=124,
+    # n_events=129903000,
+# ),
+#         tune_up=DatasetInfo(
+#             keys=[
+#                 "",  # noqa
+#             ],
+#             n_files=,
+#             n_events=,
+#         ),
+#         tune_down=DatasetInfo(
+#             keys=[
+#                 "",  # noqa
+#             ],
+#             n_files=,
+#             n_events=39285000,
+#         ),
+#         mtop_up=DatasetInfo(
+#             keys=[
+#                 "",  # noqa
+#             ],
+#             n_files=,
+#             n_events=,
+#         ),
+#         mtop_down=DatasetInfo(
+#             keys=[
+#                 "",  # noqa
+#             ],
+#             n_files=,
+#             n_events=,
+#         ),
+#     ),
+# )
+
+
 
 cpn.add_dataset(
     name="st_tchannel_tbar_powheg",
@@ -149,6 +404,49 @@ cpn.add_dataset(
     n_files=70,
     n_events=69921000,
 )
+
+
+#     info=dict(
+#         nominal=DatasetInfo(
+    # keys=[
+    #     "/ST_t-channel_antitop_4f_InclusiveDecays_TuneCP5_13TeV-powheg-madspin-pythia8/RunIISummer20UL17NanoAODv11-106X_mc2017_realistic_v9-v1/NANOAODSIM",  # noqa
+    # ],
+    # n_files=70,
+    # n_events=69921000,
+# ),
+#         tune_up=DatasetInfo(
+#             keys=[
+#                 "",  # noqa
+#             ],
+#             n_files=,
+#             n_events=,
+#         ),
+#         tune_down=DatasetInfo(
+#             keys=[
+#                 "",  # noqa
+#             ],
+#             n_files=,
+#             n_events=39285000,
+#         ),
+#         mtop_up=DatasetInfo(
+#             keys=[
+#                 "",  # noqa
+#             ],
+#             n_files=,
+#             n_events=,
+#         ),
+#         mtop_down=DatasetInfo(
+#             keys=[
+#                 "",  # noqa
+#             ],
+#             n_files=,
+#             n_events=,
+#         ),
+#     ),
+# )
+
+
+
 cpn.add_dataset(
     name="st_twchannel_t_powheg",
     id=14246006,
