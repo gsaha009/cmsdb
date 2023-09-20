@@ -66,6 +66,7 @@ br_h = DotDict(
     gg=Number(br_h_gg_full.n, {"br_h_gg": tuple(combine_uncertainties_higgs_br(br_h_gg_full))}),
     bb=Number(br_h_bb_full.n, {"br_h_bb": tuple(combine_uncertainties_higgs_br(br_h_bb_full))}),
     tt=Number(br_h_tt_full.n, {"br_h_tt": tuple(combine_uncertainties_higgs_br(br_h_tt_full))}),
+    fourl=Number(0.0002745, {}),
 )
 
 
