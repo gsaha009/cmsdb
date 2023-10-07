@@ -68,6 +68,7 @@ br_h = DotDict(
     tt=Number(br_h_tt_full.n, {"br_h_tt": tuple(combine_uncertainties_higgs_br(br_h_tt_full))}),
     fourl=Number(0.0002745, {}),
 )
+br_h["fourl"] = br_h["zz"] * br_z["clep"]**2
 
 
 br_hh = DotDict(
