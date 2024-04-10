@@ -6,7 +6,7 @@ version 11, created with custom content at UHH.
 """
 
 import cmsdb.processes as procs
-from cmsdb.campaigns.run2_2017_cms_taupog_nano_v12 import run2_2017_cms_taupog_nano_v12 as cpn
+from cmsdb.campaigns.run2_2017_cms_taupog_nano_v12 import campaign_run2_2017_cms_taupog_nano_v12 as cpn
 
 
 #
