@@ -21,7 +21,7 @@ cpn.add_dataset(
         "/TTToSemiLeptonic_TuneCP5_13TeV-powheg-pythia8/RunIISummer20UL17NanoAODv11-106X_mc2017_realistic_v9-v1/NANOAODSIM",  # noqa
     ],
     n_files=223,
-    n_events=1, # meaningless number because I don't want to look it up
+    n_events=1,  # meaningless number because I don't want to look it up
 )
 
 cpn.add_dataset(
@@ -32,7 +32,7 @@ cpn.add_dataset(
         "/TTTo2L2Nu_TuneCP5_13TeV-powheg-pythia8/RunIISummer20UL17NanoAODv11-106X_mc2017_realistic_v9-v1/NANOAODSIM",  # noqa
     ],
     n_files=92,
-    n_events=106724000, # meaningless number because I don't want to look it up
+    n_events=106724000,  # meaningless number because I don't want to look it up
 )
 
 cpn.add_dataset(
@@ -43,5 +43,5 @@ cpn.add_dataset(
         "/TTToHadronic_TuneCP5_13TeV-powheg-pythia8/RunIISummer20UL17NanoAODv11-106X_mc2017_realistic_v9-v2/NANOAODSIM",  # noqa
     ],
     n_files=97,
-    n_events=235719999, # meaningless number because I don't want to look it up
+    n_events=235719999,  # meaningless number because I don't want to look it up
 )
