@@ -23,7 +23,7 @@ from order import Campaign
 # campaign
 #
 
-run2_2017_cms_taupog_nano_v12 = Campaign(
+campaign_run2_2017_cms_taupog_nano_v12 = Campaign(
     name="run2_2017_cms_taupog_nano_v12",
     id=220171220,  # 2 2017 12 20(t)
     ecm=13,
