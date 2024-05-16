@@ -29,12 +29,8 @@ campaign_run2_2016_HIPM_nano_uhh_v12 = Campaign(
     aux={
         "tier": "NanoAOD",
         "year": 2016,
-<<<<<<< HEAD
-        "vfp": "pre",
-=======
         "identifier": "HIPM",
         "vfp":"pre",
->>>>>>> tmp
         "version": 12,
         "custom": {
             "name": "run2_2016_HIPM_nano_uhh_v12",
