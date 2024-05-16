@@ -381,19 +381,19 @@ graviton_hh_ggf_bbtautau_m350 = graviton_hh_ggf_bbtautau.add_process(
 graviton_hh_ggf_bbtautau_m400 = graviton_hh_ggf_bbtautau.add_process(
     name="graviton_hh_ggf_bbtautau_m400",
     id=24108,
-    xsecs={13: Number(0.1)},  # TODO
+    xsecs={13: Number(1)},  # TODO
 )
 
 graviton_hh_ggf_bbtautau_m450 = graviton_hh_ggf_bbtautau.add_process(
     name="graviton_hh_ggf_bbtautau_m450",
     id=24109,
-    xsecs={13: Number(0.1)},  # TODO
+    xsecs={13: Number(1)},  # TODO
 )
 
 graviton_hh_ggf_bbtautau_m500 = graviton_hh_ggf_bbtautau.add_process(
     name="graviton_hh_ggf_bbtautau_m500",
     id=24110,
-    xsecs={13: Number(0.1)},  # TODO
+    xsecs={13: Number(1)},  # TODO
 )
 
 graviton_hh_ggf_bbtautau_m550 = graviton_hh_ggf_bbtautau.add_process(
