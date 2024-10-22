@@ -6,7 +6,6 @@ from cmsdb.campaigns.run3_2022_preEE_nano_cp_tau_v12 import campaign_run3_2022_p
 
 
 
-
 cpn.add_dataset(
     name='wj_incl_madgraph',
     id=2212019,
