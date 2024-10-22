@@ -4,11 +4,11 @@ from __future__ import annotations
 
 __all__ = ["TestCampaigns"]
 
-
 import os
 import re
 import importlib
 import unittest
+import collections
 
 import cmsdb
 
@@ -30,7 +30,6 @@ class TestCampaigns(unittest.TestCase):
 
     @classmethod
     def setUpClass(cls):
-
         if not cls.campaign_names:
             # if not provided, find and test all campaigns
             campaign_dir = os.path.join(os.path.dirname(cmsdb.__file__), "campaigns")
@@ -55,6 +54,22 @@ class TestCampaigns(unittest.TestCase):
                 self.assertTrue(hasattr(campaign_inst, "id"))
                 self.assertTrue(hasattr(campaign_inst, "ecm"))
                 self.assertTrue(hasattr(campaign_inst, "bx"))
+
+    def test_campaign_aux(self):
+        for campaign_inst in self.campaigns.values():
+            with self.subTest(f"testing {campaign_inst.name}"):
+                # field existence
+                self.assertTrue(campaign_inst.has_aux("tier"))
+                self.assertTrue(campaign_inst.has_aux("run"))
+                self.assertTrue(campaign_inst.has_aux("year"))
+                self.assertTrue(campaign_inst.has_aux("version"))
+                self.assertTrue(campaign_inst.has_aux("postfix"))
+                # field types
+                self.assertIsInstance(campaign_inst.x.tier, str)
+                self.assertIsInstance(campaign_inst.x.run, int)
+                self.assertIsInstance(campaign_inst.x.year, int)
+                self.assertIsInstance(campaign_inst.x.version, int)
+                self.assertIsInstance(campaign_inst.x.postfix, str)
 
     def single_dataset_test(self, campaign_inst, dataset_inst):
         # check existence of attributes
@@ -136,3 +151,14 @@ class TestCampaigns(unittest.TestCase):
                 for dataset_inst in campaign_inst.datasets.values():
                     with self.subTest(f"testing dataset {campaign_inst.name}/{dataset_inst.name}"):
                         self.single_dataset_test(campaign_inst, dataset_inst)
+
+                # check uniqueness of names and ids
+                name_counts = collections.Counter(campaign_inst.datasets.names())
+                dup_names = {name: count for name, count in name_counts.items() if count > 1}
+                if dup_names:
+                    self.fail(f"duplicate dataset names found in {campaign_inst.name}: {dup_names}")
+
+                id_counts = collections.Counter(campaign_inst.datasets.ids())
+                dup_ids = {id_: count for id_, count in id_counts.items() if count > 1}
+                if dup_ids:
+                    self.fail(f"duplicate dataset ids found in {campaign_inst.name}: {dup_ids}")
