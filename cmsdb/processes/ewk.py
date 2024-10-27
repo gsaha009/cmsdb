@@ -39,6 +39,8 @@ __all__ = [
     "w",
     "w_taunu", "w_munu",
     "w_lnu",
+    "w_lnu_0j", "w_lnu_1j", "w_lnu_2j", "w_lnu_3j", "w_lnu_4j",
+    "w_lnu_ht40to100", "w_lnu_ht100to400", "w_lnu_ht400to800", "w_lnu_ht800to1500", "w_lnu_ht1500to2500",  # new
     "w_lnu_ht70to100", "w_lnu_ht100to200", "w_lnu_ht200to400", "w_lnu_ht400to600",
     "w_lnu_ht600to800", "w_lnu_ht800to1200", "w_lnu_ht1200to2500", "w_lnu_ht2500toinf",
     "ewk",
@@ -847,6 +849,48 @@ w_lnu = w.add_process(
     },
 )
 
+# new [required for stitching]
+w_lnu_0j = w_lnu.add_process(
+    name="w_lnu_0j",
+    id=6110,
+    label=rf"{w.label} ($W \rightarrow l\nu$) [0 jets]",
+    aux={
+        "njets": (0,1),
+    },
+)
+w_lnu_1j = w_lnu.add_process(
+    name="w_lnu_1j",
+    id=6115,
+    label=rf"{w.label} ($W \rightarrow l\nu$) [1 jets]",
+    aux={
+        "njets": (1,2),
+    },
+)
+w_lnu_2j = w_lnu.add_process(
+    name="w_lnu_2j",
+    id=6120,
+    label=rf"{w.label} ($W \rightarrow l\nu$) [2 jets]",
+    aux={
+        "njets": (2,3),
+    },
+)
+w_lnu_3j = w_lnu.add_process(
+    name="w_lnu_3j",
+    id=6125,
+    label=rf"{w.label} ($W \rightarrow l\nu$) [3 jets]",
+    aux={
+        "njets": (3,4),
+    },
+)
+w_lnu_4j = w_lnu.add_process(
+    name="w_lnu_4j",
+    id=6130,
+    label=rf"{w.label} ($W \rightarrow l\nu$) [4 jets]",
+    aux={
+        "njets": (4,5),
+    },
+)
+########################
 
 # LO cross section, needed for scaling to NNLO:
 # based on GenXSecAnalyzer
@@ -860,17 +904,36 @@ w_lnu_lo_13tev_xsec = Number(54070.0, {"tot": 18.32})
 # ht bins based on GenXSecAnalyzer
 # for WJetsToLNu_HT-{i}To{j}_TuneCP5_13TeV-madgraphMLM-pythia8 (Summer20UL16, LO)
 # using command ./calculateXSectionAndFilterEfficiency.sh -f datasets.txt -c RunIISummer20UL16MiniAODv2-106X_mcRun2_asymptotic_v17-v1 -n 5000000  # noqa
+
+w_lnu_ht40to100 = w_lnu.add_process( # NEW !
+    name="w_lnu_ht40to100",
+    id=6210,
+    xsecs={
+        13: Number(1270.0, {"tot": 0.5259}) * w_lnu.get_xsec(13) / w_lnu_lo_13tev_xsec, # dummy: TODO
+        13.6: Number(1270.0), # TODO
+    },
+)
+
 w_lnu_ht70to100 = w_lnu.add_process(
     name="w_lnu_ht70to100",
-    id=6110,
+    id=6215,
     xsecs={
         13: Number(1270.0, {"tot": 0.5259}) * w_lnu.get_xsec(13) / w_lnu_lo_13tev_xsec,
     },
 )
 
+w_lnu_ht100to400 = w_lnu.add_process( # NEW !
+    name="w_lnu_ht100to400",
+    id=6220,
+    xsecs={
+        13: Number(1270.0, {"tot": 0.5259}) * w_lnu.get_xsec(13) / w_lnu_lo_13tev_xsec, # dummy: TODO
+        13.6: Number(1270.0), # TODO 
+    },
+)
+
 w_lnu_ht100to200 = w_lnu.add_process(
     name="w_lnu_ht100to200",
-    id=6120,
+    id=6225,
     xsecs={
         13: Number(1254.0, {"tot": 0.5274}) * w_lnu.get_xsec(13) / w_lnu_lo_13tev_xsec,
     },
@@ -878,15 +941,24 @@ w_lnu_ht100to200 = w_lnu.add_process(
 
 w_lnu_ht200to400 = w_lnu.add_process(
     name="w_lnu_ht200to400",
-    id=6130,
+    id=6230,
     xsecs={
         13: Number(336.6, {"tot": 0.1528}) * w_lnu.get_xsec(13) / w_lnu_lo_13tev_xsec,
     },
 )
 
+w_lnu_ht400to800 = w_lnu.add_process( # NEW !
+    name="w_lnu_ht400to800",
+    id=6235,
+    xsecs={
+        13: Number(45.21, {"tot": 0.02966}) * w_lnu.get_xsec(13) / w_lnu_lo_13tev_xsec, # dummy: TODO
+        13.6: Number(1270.0), # TODO   
+    },
+)
+
 w_lnu_ht400to600 = w_lnu.add_process(
     name="w_lnu_ht400to600",
-    id=6140,
+    id=6240,
     xsecs={
         13: Number(45.21, {"tot": 0.02966}) * w_lnu.get_xsec(13) / w_lnu_lo_13tev_xsec,
     },
@@ -894,23 +966,41 @@ w_lnu_ht400to600 = w_lnu.add_process(
 
 w_lnu_ht600to800 = w_lnu.add_process(
     name="w_lnu_ht600to800",
-    id=6150,
+    id=6245,
     xsecs={
         13: Number(10.98, {"tot": 0.006997}) * w_lnu.get_xsec(13) / w_lnu_lo_13tev_xsec,
     },
 )
 
+w_lnu_ht800to1500 = w_lnu.add_process( # NEW !
+    name="w_lnu_ht800to1500",
+    id=6250,
+    xsecs={
+        13: Number(4.927, {"tot": 0.003229}) * w_lnu.get_xsec(13) / w_lnu_lo_13tev_xsec, # dummy: TODO
+        13.6: Number(1270.0), # TODO
+    },
+)
+
 w_lnu_ht800to1200 = w_lnu.add_process(
     name="w_lnu_ht800to1200",
-    id=6160,
+    id=6255,
     xsecs={
         13: Number(4.927, {"tot": 0.003229}) * w_lnu.get_xsec(13) / w_lnu_lo_13tev_xsec,
     },
 )
 
+w_lnu_ht1500to2500 = w_lnu.add_process( # NEW !
+    name="w_lnu_ht1500to2500",
+    id=6260,
+    xsecs={
+        13: Number(1.157, {"tot": 0.0007663}) * w_lnu.get_xsec(13) / w_lnu_lo_13tev_xsec, # dummy: TODO
+        13.6: Number(1270.0), # TODO
+    },
+)
+
 w_lnu_ht1200to2500 = w_lnu.add_process(
     name="w_lnu_ht1200to2500",
-    id=6170,
+    id=6265,
     xsecs={
         13: Number(1.157, {"tot": 0.0007663}) * w_lnu.get_xsec(13) / w_lnu_lo_13tev_xsec,
     },
@@ -920,7 +1010,7 @@ w_lnu_ht1200to2500 = w_lnu.add_process(
 # ./calculateXSectionAndFilterEfficiency.sh -f datasets.txt -c RunIISummer20UL16MiniAODv2-106X_mcRun2_asymptotic_v17-v2 -n 5000000  # noqa
 w_lnu_ht2500toinf = w_lnu.add_process(
     name="w_lnu_ht2500toinf",
-    id=6180,
+    id=6270,
     xsecs={
         13: Number(0.02624, {"tot": 0.00002981}) * w_lnu.get_xsec(13) / w_lnu_lo_13tev_xsec,
     },
@@ -1056,13 +1146,13 @@ wz = vv.add_process(
 wz_wlnu_zll = wz.add_process(
     name="wz_wlnu_zll",
     id=8210,
-    xsecs=multiply_xsecs(zz, const.br_w.lep * const.br_z.clep),
+    xsecs=multiply_xsecs(wz, const.br_w.lep * const.br_z.clep),
 )
 
 wz_wqq_zll = wz.add_process(
     name="wz_wqq_zll",
     id=8220,
-    xsecs=multiply_xsecs(zz, const.br_w.had * const.br_z.clep),
+    xsecs=multiply_xsecs(wz, const.br_w.had * const.br_z.clep),
 )
 
 
@@ -1075,9 +1165,10 @@ wz_wqq_zll = wz.add_process(
 wz_wlnu_zqq = wz.add_process(
     name="wz_wlnu_zqq",
     id=8230,
-    xsecs={
-        13: wz.get_xsec(13) * const.br_w.lep * const.br_z.qq,  # value around 10.65
-    },
+    #xsecs={
+    #    13: wz.get_xsec(13) * const.br_w.lep * const.br_z.qq,  # value around 10.65
+    #},
+    xsecs=multiply_xsecs(wz, const.br_w.lep * const.br_z.qq), # new
 )
 
 # NNLO QCD from https://twiki.cern.ch/twiki/bin/view/CMS/StandardModelCrossSectionsat13TeV?rev=28
@@ -1099,7 +1190,9 @@ ww = vv.add_process(
 )
 
 # update vv cross section
-for cme in [13]:
+#for cme in [13]:
+#    vv.set_xsec(cme, ww.get_xsec(cme) + wz.get_xsec(cme) + zz.get_xsec(cme))
+for cme in [13,13.6]:
     vv.set_xsec(cme, ww.get_xsec(cme) + wz.get_xsec(cme) + zz.get_xsec(cme))
 
 # no additional cut found in generator card:
@@ -1113,6 +1206,7 @@ ww_dl = ww.add_process(
     id=8310,
     xsecs={
         13: ww.get_xsec(13) * const.br_ww.dl,  # value around 12.6 for comparison to GenXSecAnalyzer NLO result
+        13.6: ww.get_xsec(13.6) * const.br_ww.dl,  # value around 12.6 for comparison to GenXSecAnalyzer NLO result
     },
 )
 
@@ -1127,6 +1221,7 @@ ww_sl = ww.add_process(
     id=8320,
     xsecs={
         13: ww.get_xsec(13) * const.br_ww.sl,  # value around 50.06 for comparison to GenXSecAnalyzer NLO result
+        13.6: ww.get_xsec(13.6) * const.br_ww.sl,  # value around 50.06 for comparison to GenXSecAnalyzer NLO result
     },
 )
 
@@ -1141,6 +1236,7 @@ ww_fh = ww.add_process(
     id=8330,
     xsecs={
         13: ww.get_xsec(13) * const.br_ww.fh,  # value around 53.94 for comparison to GenXSecAnalyzer NLO result
+        13.6: ww.get_xsec(13.6) * const.br_ww.fh,  # value around 53.94 for comparison to GenXSecAnalyzer NLO result
     },
 )
 
@@ -1230,5 +1326,7 @@ www = vvv.add_process(
 )
 
 # update vvv cross section
-for cme in [13]:
+#for cme in [13]:
+#    vvv.set_xsec(cme, www.get_xsec(cme) + wwz.get_xsec(cme) + wzz.get_xsec(cme) + zzz.get_xsec(cme))
+for cme in [13, 13.6]:
     vvv.set_xsec(cme, www.get_xsec(cme) + wwz.get_xsec(cme) + wzz.get_xsec(cme) + zzz.get_xsec(cme))
