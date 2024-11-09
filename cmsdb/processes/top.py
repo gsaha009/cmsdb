@@ -290,6 +290,12 @@ st_schannel_t = st_schannel.add_process(
         # TODO: 13.6 TeV xsecs
         # not available yet in
         # https://twiki.cern.ch/twiki/bin/view/LHCPhysics/SingleTopNNLORef?rev=20
+        13.6: Number(6.35, { # same as 13 (temporary)
+            "scale": (0.18, 0.15),
+            "pdf": 0.14,
+            "mtop": (0.14, 0.13),
+            "E_beam": 0.01,
+        }),
     },
 )
 
@@ -318,6 +324,12 @@ st_schannel_tbar = st_schannel.add_process(
         # TODO: 13.6 TeV xsecs
         # not available yet in
         # https://twiki.cern.ch/twiki/bin/view/LHCPhysics/SingleTopNNLORef?rev=20
+        13.6: Number(3.97, { # same as 13 (temporary) 
+            "scale": (0.11, 0.09),
+            "pdf": 0.15,
+            "mtop": 0.09,
+            "E_beam": 0.01,
+        }),        
     },
 )
 
