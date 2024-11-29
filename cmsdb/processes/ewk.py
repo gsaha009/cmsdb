@@ -162,8 +162,8 @@ dy_m50toinf_tau = dy_m50toinf.add_process(
     name="dy_m50toinf_tau",
     id=51098,
 )
-dy_m50toinf_mc_fake = dy_m50toinf.add_process(
-    name="dy_m50toinf_mc_fake",
+dy_m50toinf_jet = dy_m50toinf.add_process(
+    name="dy_m50toinf_jet",
     id=51097,
 )
 # ################################################# #

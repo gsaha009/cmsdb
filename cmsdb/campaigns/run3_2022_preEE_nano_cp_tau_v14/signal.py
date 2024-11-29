@@ -132,7 +132,7 @@ cpn.add_dataset(
     name='wph_tautau_uncorrelatedDecay_Filtered',
     id=22140191,
     is_data=False,
-    processes=[procs.wh_htt],
+    processes=[procs.wph_htt],
     keys=['/WplusHToTauTau_UncorrelatedDecay_Filtered'],
     n_files=2,
     n_events=716466.0, # this n_events is the gensumwt
@@ -143,7 +143,7 @@ cpn.add_dataset(
     name='wph_tautau_uncorrelatedDecay_UnFiltered',
     id=22140192,
     is_data=False,
-    processes=[procs.wh_htt],
+    processes=[procs.wph_htt],
     keys=['/WplusHToTauTau_UncorrelatedDecay_UnFiltered'],
     n_files=1,
     n_events=28300.0, # this n_events is the gensumwt
@@ -154,7 +154,7 @@ cpn.add_dataset(
     name='wmh_tautau_uncorrelatedDecay_Filtered',
     id=22140193,
     is_data=False,
-    processes=[procs.wh_htt],
+    processes=[procs.wmh_htt],
     keys=['/WminusHToTauTau_UncorrelatedDecay_Filtered'],
     n_files=1,
     n_events=431839.0, # this n_events is the gensumwt
@@ -165,7 +165,7 @@ cpn.add_dataset(
     name='wmh_tautau_uncorrelatedDecay_UnFiltered',
     id=22140194,
     is_data=False,
-    processes=[procs.wh_htt],
+    processes=[procs.wmh_htt],
     keys=['/WminusHToTauTau_UncorrelatedDecay_UnFiltered'],
     n_files=1,
     n_events=27789.0, # this n_events is the gensumwt
