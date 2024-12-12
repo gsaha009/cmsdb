@@ -44,9 +44,10 @@ __all__ = [
     "w_lnu_ht400to800", "w_lnu_ht800to1500", "w_lnu_ht1500to2500",  # new
     "w_lnu_ht70to100", "w_lnu_ht100to200", "w_lnu_ht200to400", "w_lnu_ht400to600",
     "w_lnu_ht600to800", "w_lnu_ht800to1200", "w_lnu_ht1200to2500", "w_lnu_ht2500toinf",
-    "w_lnu_1j", "w_lnu_1j_pt40to100", "w_lnu_1j_pt100to200", "w_lnu_1j_pt200to400",
+    "w_lnu_0j_extra",
+    "w_lnu_1j_extra", "w_lnu_1j_pt40to100", "w_lnu_1j_pt100to200", "w_lnu_1j_pt200to400",
     "w_lnu_1j_pt400to600", "w_lnu_1j_pt600toinf",
-    "w_lnu_2j", "w_lnu_2j_pt40to100", "w_lnu_2j_pt100to200", "w_lnu_2j_pt200to400",
+    "w_lnu_2j_extra", "w_lnu_2j_pt40to100", "w_lnu_2j_pt100to200", "w_lnu_2j_pt200to400",
     "w_lnu_2j_pt400to600", "w_lnu_2j_pt600toinf",
     "ewk",
     "ewk_wp_lnu_m50toinf", "ewk_wm_lnu_m50toinf", "ewk_z_ll_m50toinf",
@@ -1043,11 +1044,7 @@ w_lnu_ht100to400 = w_lnu.add_process( # NEW !
         13.6: Number(1616.0, {"tot": 6.473}) * wj_k_factor_lo_to_nnlo[13.6],
     },
     aux={
-        #"njets": (0, 5),        
         "ht": (100.0, 400.0),
-    },
-    aux={
-        "ht": (70.0, 100.0),
     },
 )
 
@@ -1078,11 +1075,7 @@ w_lnu_ht400to800 = w_lnu.add_process( # NEW !
         13.6: Number(60.33, {"tot": 0.2125}) * wj_k_factor_lo_to_nnlo[13.6],
     },
     aux={
-        #"njets": (0, 5),        
         "ht": (400.0, 800.0),
-    },
-    aux={
-        "ht": (200.0, 400.0),
     },
 )
 
@@ -1113,11 +1106,7 @@ w_lnu_ht800to1500 = w_lnu.add_process( # NEW !
         13.6: Number(60.33, {"tot": 0.04192}) * wj_k_factor_lo_to_nnlo[13.6],
     },
     aux={
-        #"njets": (0, 5),        
         "ht": (800.0, 1500.0),
-    },
-    aux={
-        "ht": (600.0, 800.0),
     },
 )
 
@@ -1137,11 +1126,7 @@ w_lnu_ht1500to2500 = w_lnu.add_process( # NEW !
         13.6: Number(0.4437, {"tot": 0.007823}) * wj_k_factor_lo_to_nnlo[13],
     },
     aux={
-        #"njets": (0, 5),        
         "ht": (1500.0, 2500.0),
-    },
-    aux={
-        "ht": (800.0, 1200.0),
     },
 )
 
@@ -1169,8 +1154,8 @@ w_lnu_ht2500toinf = w_lnu.add_process(
     },
 )
 
-w_lnu_0j = w_lnu.add_process(
-    name="w_lnu_0j",
+w_lnu_0j_extra = w_lnu.add_process(
+    name="w_lnu_0j_extra",
     id=610000,
     label=rf"{w_lnu.label[:-1]}, 0j)",
     aux={
@@ -1178,8 +1163,8 @@ w_lnu_0j = w_lnu.add_process(
     },
 )
 
-w_lnu_1j = w_lnu.add_process(
-    name="w_lnu_1j",
+w_lnu_1j_extra = w_lnu.add_process(
+    name="w_lnu_1j_extra",
     id=610010,
     label=rf"{w_lnu.label[:-1]}, 1j)",
     aux={
@@ -1187,8 +1172,8 @@ w_lnu_1j = w_lnu.add_process(
     },
 )
 
-w_lnu_2j = w_lnu.add_process(
-    name="w_lnu_2j",
+w_lnu_2j_extra = w_lnu.add_process(
+    name="w_lnu_2j_extra",
     id=610020,
     label=rf"{w_lnu.label[:-1]}, 2j)",
     aux={
