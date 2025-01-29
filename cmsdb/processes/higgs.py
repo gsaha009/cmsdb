@@ -511,11 +511,17 @@ h_ggf = h.add_process(
             "th": (0.046j, 0.067j),
             "th_gaussian": 0.039j,
         }),
-        13.6: Number(52.23, {  # value for mH=125 GeV
+        #13.6: Number(52.23, {  # value for mH=125 GeV 
+        #    "pdf": 0.032j,
+        #    "th": (0.046j, 0.067j),
+        #    "th_gaussian": 0.039,
+        #}),  # TODO: only preliminary
+        13.6: Number(5223.0, {  # making it 100 times larger just for plotting
             "pdf": 0.032j,
             "th": (0.046j, 0.067j),
             "th_gaussian": 0.039,
         }),  # TODO: only preliminary
+        
     },
     aux={"production_mode_parent": h},
 )
