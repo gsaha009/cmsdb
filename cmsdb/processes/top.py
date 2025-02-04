@@ -21,6 +21,7 @@ __all__ = [
     "ttw", "ttw_wlnu", "ttw_wqq",
     "ttvv",
     "ttzz", "ttwz", "ttww",
+    "ttwh", "ttzh",
 ]
 
 
@@ -541,8 +542,43 @@ ttww = ttvv.add_process(
 )
 
 # define the combined ttvv cross section as the sum of the three channels
+#for ecm in (13, 13.6):
+#    ttvv.set_xsec(
+#        ecm,
+#        ttzz.get_xsec(ecm) + ttwz.get_xsec(ecm) + ttww.get_xsec(ecm),
+#    )
+
+
+ttwh = ttvv.add_process(
+    name="ttwh",
+    id=4400,
+    xsecs={
+        13: (
+            Number(2705E-6, {"scale": (0.099j, 0.106j), "pdf": 0.027j}) +
+            Number(1179E-6, {"scale": 0.112j, "pdf": 0.037j})
+        ),
+        # 13.6 from GenXSecAnalyzer:
+        # https://xsecdb-xsdb-official.app.cern.ch/xsdb/?columns=67108863&currentPage=0&pageSize=10&searchQuery=DAS%3DTTWH_TuneCP5_13p6TeV_madgraph-pythia8 # noqa
+        13.6: Number(0.001252, {"tot": 4.375e-7}),  # might need a k-factor of 1.13 here
+    },
+)
+
+ttzh = ttvv.add_process(
+    name="ttzh",
+    id=4500,
+    xsecs={
+        13: (
+            Number(2705E-6, {"scale": (0.099j, 0.106j), "pdf": 0.027j}) +
+            Number(1179E-6, {"scale": 0.112j, "pdf": 0.037j})
+        ),
+        # 13.6 from GenXSecAnalyzer:
+        # https://xsecdb-xsdb-official.app.cern.ch/xsdb/?columns=67108863&currentPage=0&pageSize=10&searchQuery=DAS%3DTTZH_TuneCP5_13p6TeV_madgraph-pythia8 # noqa
+        13.6: Number(0.001288, {"tot": 4.101e-7}),  # might need a k-factor of 1.13 here
+    },
+)
+
 for ecm in (13, 13.6):
     ttvv.set_xsec(
         ecm,
-        ttzz.get_xsec(ecm) + ttwz.get_xsec(ecm) + ttww.get_xsec(ecm),
+        ttzz.get_xsec(ecm) + ttwz.get_xsec(ecm) + ttww.get_xsec(ecm) + ttwh.get_xsec(ecm) + ttzh.get_xsec(ecm),
     )
