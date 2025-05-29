@@ -1337,7 +1337,8 @@ zz = vv.add_process(
         13: Number(24.97, {"scale": (0.029j, 0.027j)}),
         # no theory prediction found yet, so take accurate value at 13 TeV and scale by the ratio
         # of XSDB values at https://xsdb-temp.app.cern.ch/xsdb/?columns=67108863&currentPage=0&pageSize=40&searchQuery=process_name%3D%5EZZ_TuneCP5_13.%2Bpythia8%24  # noqa
-        13.6: Number(24.97, {"scale": (0.029j, 0.027j)}) * (12.75 / 12.14),
+        #13.6: Number(24.97, {"scale": (0.029j, 0.027j)}) * (12.75 / 12.14),
+        13.6: Number(18.0285, {"scale": (0.029j, 0.027j)}),
     },
 )
 
@@ -1392,7 +1393,7 @@ wz = vv.add_process(
         # shows a permille difference in the values calculated directly and the ones added from w+ and w-
         13: wp_z_xsec[13] + wm_z_xsec[13],
         # 13.6 from GenXSecAnalyzer:
-        13.6: Number(29.17, {
+        13.6: Number(44.3484, { # 29.17
             "tot": 0.005941,  # xsdb: Number(29.1, {"tot": 0.1318}),
         }),
     },
@@ -1438,7 +1439,7 @@ ww = vv.add_process(
     xsecs={
         13: Number(118.7, {"scale": (0.025j, 0.022j)}),
         # 13.6 from GenXSecAnalyzer:
-        13.6: Number(80.22, {
+        13.6: Number(122.27052, { #80.22
             "tot": 0.01677,  # xsdb: Number(80.23, {"tot": 0.3733})
         }),
     },
