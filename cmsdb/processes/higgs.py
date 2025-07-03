@@ -139,6 +139,9 @@ __all__ = [
     "h_ggf_hwwqqlnu", "h_ggf_hww2l2nu", "h_ggf_hww4q",
     "h_ggf_hzz4l", "h_ggf_hzz2l2nu", "h_ggf_hzz2l2q", "h_ggf_hzz2q2nu", "h_ggf_hzz4nu", "h_ggf_hzz4q",
     "h_ggf_hzg_zll", "h_ggf_hzg_zqq", "h_ggf_hzg_znunu",
+    # new
+    #"h_ggf_htt_cpodd", "h_ggf_htt_cpeven", "h_ggf_htt_cpmix",
+    # new
     "h_vbf",
     "h_vbf_htt", "h_vbf_hww", "h_vbf_hzz", "h_vbf_hbb", "h_vbf_hnonbb", "h_vbf_hcc",
     "h_vbf_hzg", "h_vbf_hgg", "h_vbf_hmm",
@@ -516,7 +519,7 @@ h_ggf = h.add_process(
         #    "th": (0.046j, 0.067j),
         #    "th_gaussian": 0.039,
         #}),  # TODO: only preliminary
-        13.6: Number(522.3, {  # making it 10 times larger just for plotting
+        13.6: Number(52.23, {
             "pdf": 0.032j,
             "th": (0.046j, 0.067j),
             "th_gaussian": 0.039,
@@ -536,6 +539,32 @@ h_ggf_hcc = add_decay_process(h_ggf, h_decay_map.hcc)
 h_ggf_hzg = add_decay_process(h_ggf, h_decay_map.hzg)
 h_ggf_hgg = add_decay_process(h_ggf, h_decay_map.hgg)
 h_ggf_hmm = add_decay_process(h_ggf, h_decay_map.hmm)
+
+"""
+# Aternative CP processes for ggf htt process    
+h_ggf_htt_xsecs = {
+        ecm: h_ggf_htt.get_xsec(ecm) 
+        for ecm in h_ggf_htt.xsecs.keys()
+}
+
+h_ggf_htt_cpodd = h_ggf_htt.add_process(
+    name="h_ggf_htt_cpodd",
+    id=11101,
+    xsecs = h_ggf_htt_xsecs,
+)
+
+h_ggf_htt_cpeven = h_ggf_htt.add_process(
+    name="h_ggf_htt_cpeven",
+    id=11102,
+    xsecs = h_ggf_htt_xsecs,
+)
+
+h_ggf_htt_cpmix = h_ggf_htt.add_process(
+    name="h_ggf_htt_cpmix",
+    id=11103,
+    xsecs = h_ggf_htt_xsecs,
+)
+"""
 
 # Higgs sub-decay channels
 # TODO: mapping of parent processes does not yet work here
