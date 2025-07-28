@@ -34,3 +34,4 @@ import cmsdb.campaigns.run3_2023_preBPix_nano_cp_tau_v14.st
 import cmsdb.campaigns.run3_2023_preBPix_nano_cp_tau_v14.tt
 import cmsdb.campaigns.run3_2023_preBPix_nano_cp_tau_v14.vv
 import cmsdb.campaigns.run3_2023_preBPix_nano_cp_tau_v14.wj
+import cmsdb.campaigns.run3_2023_preBPix_nano_cp_tau_v14.qcd
