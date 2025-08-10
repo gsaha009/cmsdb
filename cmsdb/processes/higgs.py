@@ -514,17 +514,11 @@ h_ggf = h.add_process(
             "th": (0.046j, 0.067j),
             "th_gaussian": 0.039j,
         }),
-        #13.6: Number(52.23, {  # value for mH=125 GeV 
-        #    "pdf": 0.032j,
-        #    "th": (0.046j, 0.067j),
-        #    "th_gaussian": 0.039,
-        #}),  # TODO: only preliminary
         13.6: Number(52.23, {
             "pdf": 0.032j,
             "th": (0.046j, 0.067j),
             "th_gaussian": 0.039,
         }),  # TODO: only preliminary
-        
     },
     aux={"production_mode_parent": h},
 )
@@ -540,7 +534,7 @@ h_ggf_hzg = add_decay_process(h_ggf, h_decay_map.hzg)
 h_ggf_hgg = add_decay_process(h_ggf, h_decay_map.hgg)
 h_ggf_hmm = add_decay_process(h_ggf, h_decay_map.hmm)
 
-"""
+
 # Aternative CP processes for ggf htt process    
 h_ggf_htt_xsecs = {
         ecm: h_ggf_htt.get_xsec(ecm) 
@@ -564,7 +558,7 @@ h_ggf_htt_cpmix = h_ggf_htt.add_process(
     id=11103,
     xsecs = h_ggf_htt_xsecs,
 )
-"""
+
 
 # Higgs sub-decay channels
 # TODO: mapping of parent processes does not yet work here

@@ -27,6 +27,7 @@ __all__ = [
     "dy_m50toinf_ht1200to2500", "dy_m50toinf_ht2500toinf",
     "dy_pt0to50", "dy_pt50to100", "dy_pt100to250", "dy_pt250to400",
     "dy_pt400to650", "dy_pt650toinf",
+    "dy_2tau_m50toinf_0j", "dy_2tau_m50toinf_1j", "dy_2tau_m50toinf_2j",
     "z",
     "z_nunu",
     "z_nunu_ht100to200", "z_nunu_ht200to400", "z_nunu_ht400to600",
@@ -312,10 +313,10 @@ dy_2j = dy.add_process(
 dy_m50toinf_1j_pt0to40 = dy_m50toinf_1j.add_process(
     name="dy_m50toinf_1j_pt0to40",
     id=511110,
-    xsecs={
-        13: Number(0.1) * dy_k_factor_nlo_to_nnlo[13], # dummy
-        13.6: Number(0.1) * dy_k_factor_nlo_to_nnlo[13.6],
-    },
+    #xsecs={
+    #    13: Number(0.1) * dy_k_factor_nlo_to_nnlo[13], # dummy
+    #    13.6: Number(0.1) * dy_k_factor_nlo_to_nnlo[13.6],
+    #},
     aux={
         "mll": (50.0, const.inf),
         "njets": (1, 2),
@@ -326,10 +327,10 @@ dy_m50toinf_1j_pt0to40 = dy_m50toinf_1j.add_process(
 dy_m50toinf_1j_pt40to100 = dy_m50toinf_1j.add_process(
     name="dy_m50toinf_1j_pt40to100",
     id=511111,
-    xsecs={
-        13: Number(0.1) * dy_k_factor_nlo_to_nnlo[13], # dummy
-        13.6: Number(476.3, {"tot": 3.633}) * dy_k_factor_nlo_to_nnlo[13.6],
-    },
+    #xsecs={
+    #    13: Number(0.1) * dy_k_factor_nlo_to_nnlo[13], # dummy
+    #    13.6: Number(476.3, {"tot": 3.633}) * dy_k_factor_nlo_to_nnlo[13.6],
+    #},
     aux={
         "mll": (50.0, const.inf),
         "njets": (1, 2),
@@ -340,10 +341,10 @@ dy_m50toinf_1j_pt40to100 = dy_m50toinf_1j.add_process(
 dy_m50toinf_1j_pt100to200 = dy_m50toinf_1j.add_process(
     name="dy_m50toinf_1j_pt100to200",
     id=511112,
-    xsecs={
-        13: Number(0.1) * dy_k_factor_nlo_to_nnlo[13], # dummy
-        13.6: Number(47.36, {"tot": 1.067}) * dy_k_factor_nlo_to_nnlo[13.6],
-    },
+    #xsecs={
+    #    13: Number(0.1) * dy_k_factor_nlo_to_nnlo[13], # dummy
+    #    13.6: Number(47.36, {"tot": 1.067}) * dy_k_factor_nlo_to_nnlo[13.6],
+    #},
     aux={
         "mll": (50.0, const.inf),
         "njets": (1, 2),
@@ -354,10 +355,10 @@ dy_m50toinf_1j_pt100to200 = dy_m50toinf_1j.add_process(
 dy_m50toinf_1j_pt200to400 = dy_m50toinf_1j.add_process(
     name="dy_m50toinf_1j_pt200to400",
     id=511113,
-    xsecs={
-        13: Number(0.1) * dy_k_factor_nlo_to_nnlo[13], # dummy
-        13.6: Number(3.376, {"tot": 0.0312}) * dy_k_factor_nlo_to_nnlo[13.6],
-    },
+    #xsecs={
+    #    13: Number(0.1) * dy_k_factor_nlo_to_nnlo[13], # dummy
+    #    13.6: Number(3.376, {"tot": 0.0312}) * dy_k_factor_nlo_to_nnlo[13.6],
+    #},
     aux={
         "mll": (50.0, const.inf),
         "njets": (1, 2),
@@ -368,10 +369,10 @@ dy_m50toinf_1j_pt200to400 = dy_m50toinf_1j.add_process(
 dy_m50toinf_1j_pt400to600 = dy_m50toinf_1j.add_process(
     name="dy_m50toinf_1j_pt400to600",
     id=511114,
-    xsecs={
-        13: Number(0.1) * dy_k_factor_nlo_to_nnlo[13], # dummy
-        13.6: Number(0.1192, {"tot": 0.0011}) * dy_k_factor_nlo_to_nnlo[13.6],
-    },
+    #xsecs={
+    #    13: Number(0.1) * dy_k_factor_nlo_to_nnlo[13], # dummy
+    #    13.6: Number(0.1192, {"tot": 0.0011}) * dy_k_factor_nlo_to_nnlo[13.6],
+    #},
     aux={
         "mll": (50.0, const.inf),
         "njets": (1, 2),
@@ -382,10 +383,10 @@ dy_m50toinf_1j_pt400to600 = dy_m50toinf_1j.add_process(
 dy_m50toinf_1j_pt600toinf = dy_m50toinf_1j.add_process(
     name="dy_m50toinf_1j_pt600toinf",
     id=511115,
-    xsecs={
-        13: Number(0.1) * dy_k_factor_nlo_to_nnlo[13], # dummy
-        13.6: Number(0.0145, {"tot": 0.0005}) * dy_k_factor_nlo_to_nnlo[13.6],
-    },
+    #xsecs={
+    #    13: Number(0.1) * dy_k_factor_nlo_to_nnlo[13], # dummy
+    #    13.6: Number(0.0145, {"tot": 0.0005}) * dy_k_factor_nlo_to_nnlo[13.6],
+    #},
     aux={
         "mll": (50.0, const.inf),
         "njets": (1, 2),
@@ -396,10 +397,10 @@ dy_m50toinf_1j_pt600toinf = dy_m50toinf_1j.add_process(
 dy_m50toinf_2j_pt0to40 = dy_m50toinf_2j.add_process(
     name="dy_m50toinf_2j_pt0to40",
     id=511120,
-    xsecs={
-        13: Number(0.1) * dy_k_factor_nlo_to_nnlo[13], # dummy
-        13.6: Number(0.1) * dy_k_factor_nlo_to_nnlo[13.6],
-    },
+    #xsecs={
+    #    13: Number(0.1) * dy_k_factor_nlo_to_nnlo[13], # dummy
+    #    13.6: Number(0.1) * dy_k_factor_nlo_to_nnlo[13.6],
+    #},
     aux={
         "mll": (50.0, const.inf),
         "njets": (2, 3),
@@ -410,10 +411,10 @@ dy_m50toinf_2j_pt0to40 = dy_m50toinf_2j.add_process(
 dy_m50toinf_2j_pt40to100 = dy_m50toinf_2j.add_process(
     name="dy_m50toinf_2j_pt40to100",
     id=511121,
-    xsecs={
-        13: Number(0.1) * dy_k_factor_nlo_to_nnlo[13], # dummy
-        13.6: Number(177.1, {"tot": 2.244}) * dy_k_factor_nlo_to_nnlo[13.6],
-    },
+    #xsecs={
+    #    13: Number(0.1) * dy_k_factor_nlo_to_nnlo[13], # dummy
+    #    13.6: Number(177.1, {"tot": 2.244}) * dy_k_factor_nlo_to_nnlo[13.6],
+    #},
     aux={
         "mll": (50.0, const.inf),
         "njets": (2, 3),
@@ -424,10 +425,10 @@ dy_m50toinf_2j_pt40to100 = dy_m50toinf_2j.add_process(
 dy_m50toinf_2j_pt100to200 = dy_m50toinf_2j.add_process(
     name="dy_m50toinf_2j_pt100to200",
     id=511122,
-    xsecs={
-        13: Number(0.1) * dy_k_factor_nlo_to_nnlo[13], # dummy
-        13.6: Number(51.64, {"tot": 0.660}) * dy_k_factor_nlo_to_nnlo[13.6],
-    },
+    #xsecs={
+    #    13: Number(0.1) * dy_k_factor_nlo_to_nnlo[13], # dummy
+    #    13.6: Number(51.64, {"tot": 0.660}) * dy_k_factor_nlo_to_nnlo[13.6],
+    #},
     aux={
         "mll": (50.0, const.inf),
         "njets": (2, 3),
@@ -438,10 +439,10 @@ dy_m50toinf_2j_pt100to200 = dy_m50toinf_2j.add_process(
 dy_m50toinf_2j_pt200to400 = dy_m50toinf_2j.add_process(
     name="dy_m50toinf_2j_pt200to400",
     id=511123,
-    xsecs={
-        13: Number(0.1) * dy_k_factor_nlo_to_nnlo[13], # dummy
-        13.6: Number(7.116, {"tot": 0.085}) * dy_k_factor_nlo_to_nnlo[13.6],
-    },
+    #xsecs={
+    #    13: Number(0.1) * dy_k_factor_nlo_to_nnlo[13], # dummy
+    #    13.6: Number(7.116, {"tot": 0.085}) * dy_k_factor_nlo_to_nnlo[13.6],
+    #},
     aux={
         "mll": (50.0, const.inf),
         "njets": (2, 3),
@@ -452,10 +453,10 @@ dy_m50toinf_2j_pt200to400 = dy_m50toinf_2j.add_process(
 dy_m50toinf_2j_pt400to600 = dy_m50toinf_2j.add_process(
     name="dy_m50toinf_2j_pt400to600",
     id=511124,
-    xsecs={
-        13: Number(0.1) * dy_k_factor_nlo_to_nnlo[13], # dummy
-        13.6: Number(0.419, {"tot": 0.0086}) * dy_k_factor_nlo_to_nnlo[13.6],
-    },
+    #xsecs={
+    #    13: Number(0.1) * dy_k_factor_nlo_to_nnlo[13], # dummy
+    #    13.6: Number(0.419, {"tot": 0.0086}) * dy_k_factor_nlo_to_nnlo[13.6],
+    #},
     aux={
         "mll": (50.0, const.inf),
         "njets": (2, 3),
@@ -466,10 +467,10 @@ dy_m50toinf_2j_pt400to600 = dy_m50toinf_2j.add_process(
 dy_m50toinf_2j_pt600toinf = dy_m50toinf_2j.add_process(
     name="dy_m50toinf_2j_pt600toinf",
     id=511125,
-    xsecs={
-        13: Number(0.1) * dy_k_factor_nlo_to_nnlo[13], # dummy
-        13.6: Number(0.0714, {"tot": 0.0007}) * dy_k_factor_nlo_to_nnlo[13.6],
-    },
+    #xsecs={
+    #    13: Number(0.1) * dy_k_factor_nlo_to_nnlo[13], # dummy
+    #    13.6: Number(0.0714, {"tot": 0.0007}) * dy_k_factor_nlo_to_nnlo[13.6],
+    #},
     aux={
         "mll": (50.0, const.inf),
         "njets": (2, 3),
@@ -658,6 +659,26 @@ dy_pt650toinf = dy.add_process(
         "ptll": (650.0, const.inf),
     },
 )
+
+# New DY to 2Taus
+dy_2tau_m50toinf_0j = dy_0j.add_process(
+    name="dy_2tau_m50toinf_0j",
+    id=51570,
+)
+dy_2tau_m50toinf_0j.set_xsec(13.6, dy_m50toinf_0j.get_xsec(13.6)/3.0)
+
+dy_2tau_m50toinf_1j = dy_1j.add_process(
+    name="dy_2tau_m50toinf_1j",
+    id=51571,
+)
+dy_2tau_m50toinf_1j.set_xsec(13.6, dy_m50toinf_1j.get_xsec(13.6)/3.0)
+
+dy_2tau_m50toinf_2j = dy_2j.add_process(
+    name="dy_2tau_m50toinf_2j",
+    id=51572,
+)
+dy_2tau_m50toinf_2j.set_xsec(13.6, dy_m50toinf_2j.get_xsec(13.6)/3.0)
+
 
 #
 # Z boson (no photon/DY)
