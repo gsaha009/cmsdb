@@ -116,10 +116,14 @@ dy_m50toinf = dy.add_process(
             "scale": 0.02j,
             "pdf": 14.78,
         }),
-        13.6: const.n_leps * Number(2091.7, {
+        #13.6: const.n_leps * Number(2091.7, {
+        #    "scale": (0.008j, 0.013j),
+        #    "pdf": 0.01j,
+        #}),
+        13.6: Number(6282.6, { 
             "scale": (0.008j, 0.013j),
             "pdf": 0.01j,
-        }),
+        }), #IC
     },
     aux={
         "mll": (50.0, const.inf),
@@ -160,15 +164,27 @@ dy_m10to50 = dy.add_process(
 )
 
 # for DY-splitted in Z to ll (e/mu) and Z to tautau
-dy_m50toinf_lep = dy_m50toinf.add_process(
+#dy_m50toinf_lep = dy_m50toinf.add_process(
+#    name="dy_m50toinf_lep",
+#    id=51099,
+#)
+#dy_m50toinf_tau = dy_m50toinf.add_process(
+#    name="dy_m50toinf_tau",
+#    id=51098,
+#)
+#dy_m50toinf_jet = dy_m50toinf.add_process(
+#    name="dy_m50toinf_jet",
+#    id=51097,
+#)
+dy_m50toinf_lep = dy.add_process(
     name="dy_m50toinf_lep",
     id=51099,
 )
-dy_m50toinf_tau = dy_m50toinf.add_process(
+dy_m50toinf_tau = dy.add_process(
     name="dy_m50toinf_tau",
     id=51098,
 )
-dy_m50toinf_jet = dy_m50toinf.add_process(
+dy_m50toinf_jet = dy.add_process(
     name="dy_m50toinf_jet",
     id=51097,
 )
@@ -189,7 +205,8 @@ dy_m50toinf_0j = dy_m50toinf.add_process(
     id=51110,
     xsecs={
         # NLO xsec taken from https://xsdb-temp.app.cern.ch/xsdb/?columns=39911424&currentPage=0&pageSize=10&searchQuery=DAS%3DDYto2L-2Jets_MLL-50_0J_TuneCP5_13p6TeV_amcatnloFXFX-pythia8  # noqa
-        13.6: Number(5378, {"tot": 8.007}) * dy_k_factor_nlo_to_nnlo[13.6],
+        #13.6: Number(5378, {"tot": 8.007}) * dy_k_factor_nlo_to_nnlo[13.6],
+        13.6: Number(4994.052519, {"tot": 8.007}), # IC
     },
     aux={
         "mll": (50.0, const.inf),
@@ -204,8 +221,8 @@ dy_m50toinf_1j = dy_m50toinf.add_process(
         13: Number(926.8, {
             "tot": 0.3597,
         }) * dy_k_factor_lo_to_nnlo[13],
-        # 13.6: Number(1017, {"tot": 6.264}) * dy_k_factor_nlo_to_nnlo[13.6],
-        13.6: Number(973.1, {"tot": 2.613}) * dy_k_factor_lo_to_nnlo[13.6],
+        #13.6: Number(973.1, {"tot": 2.613}) * dy_k_factor_lo_to_nnlo[13.6],
+        13.6: Number(948.7210136, {"tot": 2.613}),
     },
     aux={
         "mll": (50.0, const.inf),
@@ -220,8 +237,8 @@ dy_m50toinf_2j = dy_m50toinf.add_process(
         13: Number(294.5, {
             "tot": 0.1223,
         }) * dy_k_factor_lo_to_nnlo[13],
-        # 13.6: Number(385.5, {"tot": 3.858}) * dy_k_factor_nlo_to_nnlo[13.6],
-        13.6: Number(312.4, {"tot": 0.915}) * dy_k_factor_lo_to_nnlo[13.6],
+        #13.6: Number(312.4, {"tot": 0.915}) * dy_k_factor_lo_to_nnlo[13.6],
+        13.6: Number(349.4160907, {"tot": 0.915}),
     },
     aux={
         "mll": (50.0, const.inf),
