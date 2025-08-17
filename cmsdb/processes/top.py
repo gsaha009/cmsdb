@@ -145,7 +145,6 @@ st_tchannel_t = st_tchannel.add_process(
             mtop=(1.3, 0.9),
             E_beam=(0.4, 0.3),
             integration=0.1,
-
         )),
     },
 )
@@ -344,12 +343,12 @@ st_schannel_tbar_had = st_schannel_tbar.add_process(
 # define the combined single top cross section as the sum of the three channels
 st.set_xsec(
     13,
-    st_tchannel.get_xsec(13) + st_twchannel.get_xsec(13) + st_schannel.get_xsec(13),
+    st_tchannel.get_xsec(13) + st_twchannel.get_xsec(13), # + st_schannel.get_xsec(13),
 )
 
 st.set_xsec(
     13.6,
-    st_tchannel.get_xsec(13.6) + st_twchannel.get_xsec(13.6) + st_schannel.get_xsec(13.6),
+    st_tchannel.get_xsec(13.6) + st_twchannel.get_xsec(13.6), # + st_schannel.get_xsec(13.6),
 )
 
 
